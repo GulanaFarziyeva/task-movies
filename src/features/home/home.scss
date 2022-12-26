@@ -1,0 +1,95 @@
+@mixin flex ($flex, $direction, $justify, $aligin, $gap) {
+    display: $flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $aligin;
+    gap: $gap;
+}
+
+.home {
+    &__hero {
+        position: relative;
+
+        &__inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 1540px;
+            height: 400px;
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)),
+                url('../../assets/images/hero.jpg');
+            height: 400px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: right 80% top 30%;
+
+            &__volume {
+                position: fixed;
+                top: 40%;
+                left: 88%;
+                cursor: pointer;
+
+                &__btn {
+                    color: $base-color;
+                    font-size: 20px;
+                }
+
+                &__off-btn {
+                    color: $base-color;
+                    font-size: 20px;
+                }
+
+                .volume-off {
+                    display: none;
+                }
+
+                .volume-open {
+                    display: block;
+                }
+            }
+        }
+    }
+
+}
+
+@media(max-width: 1180px) {
+    .home {
+        &__hero {
+            &__inner {
+                width: 100vw;
+                background-position: right 80% top 40%;
+            }
+        }
+    }
+}
+
+@media(max-width:650px) {
+    .home {
+        &__hero__inner__volume {
+            left: 85%;
+            top: 45%;
+        }
+    }
+}
+
+@media(max-width:450px) {
+    .home {
+        &__hero__inner__volume {
+            left: 80%;
+            top: 25%;
+        }
+    }
+}
+
+@media(min-width: 1541px) {
+    .home__hero__inner {
+        width: 100vw !important;
+        
+        &__volume {
+            top: 25%;
+            left: 75%;
+        }
+    }
+}

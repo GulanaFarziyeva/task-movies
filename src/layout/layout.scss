@@ -1,0 +1,182 @@
+@mixin flex ($flex, $direction, $justify, $aligin, $gap) {
+    display: $flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $aligin;
+    gap: $gap;
+}
+
+.nav-link--background {
+    background: $--transparent;
+}
+
+.dark-background {
+    background-color: $--dark;
+    transition: all .5s ease;
+}
+
+.header-text {
+    font-size: 14px;
+    line-height: 16.8px;
+}
+
+.header {
+    position: fixed;
+    padding: 27px 122px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+
+    &__inner {
+        width: 100%;
+        @include flex(flex, row, flex-start, center, 50px);
+
+        &__logo {
+            color: $base-color;
+            font-size: 25.2px;
+            line-height: 120%;
+            display: flex;
+            font-weight: 300;
+            line-height: 120%;
+            text-transform: uppercase;
+            justify-self: flex-start;
+            cursor: pointer;
+        }
+
+        &__menu {
+            width: 252px;
+            height: 43px;
+            padding: 13px 27px;
+            border-radius: 8px;
+            @extend .nav-link--background;
+            @include flex(flex, row, space-between, center, 12px);
+
+            &__link {
+                color: $base-color;
+                transition: all 05s ease;
+                @extend .header-text;
+            }
+
+            &__select {
+                &__inner {
+                    background: none;
+                    border-radius: 7px;
+                    color: $base-color;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &__btn-container {
+            margin-left: auto;
+            @include flex(flex, row, space-between, center, 15px);
+
+            &__btn {
+                color: $base-color;
+                padding: 14px 27px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                @extend .nav-link--background, .header-text;
+                @include flex(flex, row, space-between, center, 12px);
+
+                &__circle {
+                    width: 10px;
+                    height: 10px;
+                    display: inline-block;
+                    border-radius: 12.5px;
+                    background-color: $--orange;
+                }
+            }
+        }
+
+    }
+
+    &__hamburger-menu {
+        color: $base-color;
+        font-size: 20px;
+        display: none;
+        cursor: pointer;
+        position: fixed;
+        top: 35px;
+        right: 60px;
+    }
+
+    &__hamburger-menu-close {
+        color: $base-color;
+        font-size: 20px;
+        display: none;
+        cursor: pointer;
+        position: fixed;
+        top: 35px;
+        right: 60px;
+        display: none;
+    }
+}
+
+@media(min-width: 801px) {
+    .header__inner {
+        background: none;
+    }
+}
+
+@media(max-width: 1180px) {
+    .header {
+        padding: 27px 80px;
+    }
+}
+
+@media(max-width: 800px) {
+    .header {
+        padding: 0;
+        height: 400px;
+
+        &__inner {
+            padding: 27px 60px;
+            height: 100%;
+            width: 50%;
+            @include flex(flex, column, flex-start, flex-start, 0);
+
+            &__btn-container {
+                display: none;
+            }
+
+            &__menu {
+                height: 100%;
+                width: 100%;
+                margin-top: 40px;
+                padding: 0;
+                background: $--dark;
+                transition: all .5s ease !important;
+                @include flex(flex, column, flex-start, flex-start, 20px);
+
+                &__select {
+                    margin-top: auto;
+                }
+
+            }
+        }
+
+        &__hamburger-menu {
+            display: block;
+            margin-left: auto;
+        }
+
+        .hamburger-menu-block {
+            display: block;
+            transition: all .5s ease;
+        }
+
+        .hamburger-menu-close {
+            display: none;
+            transition: all .5s ease;
+        }
+    }
+
+    .navbar-active {
+        transform: translateY(-1000%);
+    }
+}
