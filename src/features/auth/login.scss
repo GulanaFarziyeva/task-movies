@@ -1,0 +1,121 @@
+@mixin flex ($flex, $direction, $justify, $aligin, $gap) {
+    display: $flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $aligin;
+    gap: $gap;
+}
+
+.login {
+    max-width: 450px;
+    margin: 0 auto;
+    color: $base-color;
+    background-color: $theme-color;
+    @include flex(flex, column, flex-start, center, 20px);
+
+    &__title {
+        font-size: 30px;
+        line-height: 36px;
+        font-weight: 300;
+        margin: 40px 0 20px 0;
+    }
+
+    &__text {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 16px;
+        margin-bottom: 20px;
+    }
+
+    &__form {
+        width: 100%;
+        padding: 0 60px;
+        @include flex(flex, column, center, center, 20px);
+
+        &__label {
+            width: 100%;
+        }
+
+        &__input {
+            font-size: 14px;
+            width: 100%;
+            padding: 14px 38px;
+            border-radius: 8px;
+            outline: none;
+            border: none;
+            color: $base-color;
+            background-color: $dark !important;
+        }
+
+        &__password-link {
+            margin-left: auto;
+            color: $base-color;
+            font-size: 13px;
+            line-height: 15px;
+        }
+
+        &__btn-container {
+            margin: 20px 0;
+            width: 100%;
+            @include flex(flex, row, space-between, center, 0);
+
+            &__register-btn {
+                color: $base-color;
+                font-size: 13px;
+                line-height: 15px;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+
+            &__login-inner {
+                box-sizing: border-box;
+                padding: 2px 40px;
+                background: linear-gradient(#222, #222),
+                    linear-gradient(#0FF7F0, #D686FF);
+                border: 1px solid transparent;
+                background-repeat: no-repeat;
+                background-origin: padding-box, border-box;
+                border-radius: 1.5rem;
+                border-width: 9px;
+                position: relative;
+                cursor: pointer;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -8px;
+                    bottom: -8px;
+                    left: -8px;
+                    right: -8px;
+                    border: 9px solid #222;
+                    border-radius: 1.5rem;
+                }
+
+                &__btn {
+                    background: none;
+                    border: none;
+                    outline: none;
+                    color: $base-color;
+                    font-size: 16px;
+                    line-height: 19px;
+                }
+            }
+        }
+    }
+
+    &__footer-text {
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 14px;
+        letter-spacing: 1px;
+        margin: 0 50px 20px 50px;
+        text-align: center;
+
+        &__link {
+            color: $base-color;
+            text-decoration: underline;
+        }
+    }
+
+}
