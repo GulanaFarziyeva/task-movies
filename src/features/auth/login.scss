@@ -1,12 +1,8 @@
-@mixin flex ($flex, $direction, $justify, $aligin, $gap) {
-    display: $flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $aligin;
-    gap: $gap;
-}
-
 .login {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     max-width: 450px;
     margin: 0 auto;
     color: $base-color;
@@ -30,10 +26,11 @@
     &__form {
         width: 100%;
         padding: 0 60px;
-        @include flex(flex, column, center, center, 20px);
+        @include flex(flex, column, center, center, 10px);
 
         &__label {
             width: 100%;
+            font-weight: 500;
         }
 
         &__input {
@@ -55,7 +52,7 @@
         }
 
         &__btn-container {
-            margin: 20px 0;
+            margin: 15px 0 10px 0;
             width: 100%;
             @include flex(flex, row, space-between, center, 0);
 
@@ -116,6 +113,15 @@
             color: $base-color;
             text-decoration: underline;
         }
+    }
+
+    &__close-btn{
+        font-size: 22px;
+        position: fixed;
+        top: -5px;
+        right: -5px;
+        color: rgba(255, 255, 255, 0.76);
+        cursor: pointer;
     }
 
 }

@@ -1,11 +1,3 @@
-@mixin flex ($flex, $direction, $justify, $aligin, $gap) {
-    display: $flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $aligin;
-    gap: $gap;
-}
-
 .home {
     &__hero {
         position: relative;

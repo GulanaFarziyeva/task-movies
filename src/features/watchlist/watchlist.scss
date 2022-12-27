@@ -1,0 +1,50 @@
+.watchlist {
+  width: 300px;
+  position: absolute;
+  top: 20%;
+  left: 61%;
+  z-index: 900;
+  background-color: $theme-color;
+  margin: 40px auto;
+  padding: 20px;
+
+  @include flex(flex, column, center, center, 10px);
+
+  &__inner {
+    width: 100%;
+    display: flex;
+    padding-right: 10px;
+    background: rgba(0, 0, 0, 0.712);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    @include flex(flex, row, flex-start, center, 20px);
+
+    &__img {
+      width: 70px;
+      height: 40px;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    &__title {
+      color: $base-color;
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    &__close-btn {
+      margin-left: auto;
+      color: $base-color;
+      font-size: 10px;
+    }
+  }
+
+  &__close-btn {
+    position: absolute;
+    z-index: 999;
+    top: -5px;
+    right: -5px;
+    color: rgba(255, 255, 255, 0.76);
+    cursor: pointer;
+  }
+}

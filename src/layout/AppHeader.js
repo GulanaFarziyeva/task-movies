@@ -1,13 +1,30 @@
 import { FaBars } from "@react-icons/all-files/fa/FaBars";
 import { FaTimes } from "@react-icons/all-files/fa/FaTimes";
 import { useState } from "react";
+import LoginForm from "../features/auth/LoginForm";
+
+import { createModal, useModals } from "../features/modals/Modal";
+import Watchlist from "../features/watchlist/WatchList";
 
 const AppHeader = () => {
   const [active, setActive] = useState(false);
 
+  const modal = useModals();
+
   return (
     <div className="header container">
-      <div className={`header__inner ${active ? "dark-background" : "transparent"}`}>
+      {modal.length > 0 && modal[modal.length - 1].data === "login" && (
+        <LoginForm />
+      )}
+
+      {modal.length > 0 && modal[modal.length - 1].data === "watchlist" && (
+        <Watchlist />
+      )}
+      <div
+        className={`header__inner ${
+          active ? "dark-background" : "transparent"
+        }`}
+      >
         <h1 className="header__inner__logo">Logo</h1>
 
         <ul className={`header__inner__menu ${!active && "navbar-active"}`}>
@@ -46,11 +63,19 @@ const AppHeader = () => {
         </ul>
 
         <div className="header__inner__btn-container">
-          <button className="header__inner__btn-container__btn">
+          <button
+            className="header__inner__btn-container__btn"
+            onClick={() => createModal("watchlist")}
+          >
             Watchlist
             <span className="header__inner__btn-container__btn__circle"></span>
           </button>
-          <button className="header__inner__btn-container__btn">Sign In</button>
+          <button
+            className="header__inner__btn-container__btn"
+            onClick={() => createModal("login")}
+          >
+            Sign In
+          </button>
         </div>
       </div>
       <FaBars
@@ -58,7 +83,7 @@ const AppHeader = () => {
           active ? "hamburger-menu-close" : "hamburger-menu-block"
         }`}
         onClick={() => {
-          setActive(prevState => !prevState);
+          setActive((prevState) => !prevState);
         }}
       />
       <FaTimes
@@ -66,7 +91,7 @@ const AppHeader = () => {
           active ? "hamburger-menu-block" : "hamburger-menu-close"
         }`}
         onClick={() => {
-          setActive(prevState => !prevState);
+          setActive((prevState) => !prevState);
         }}
       />
     </div>

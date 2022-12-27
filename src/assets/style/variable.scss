@@ -2,3 +2,12 @@ $base-color: #fff;
 $orange:#E24D4D;
 $theme-color: #ffffff29;
 $dark: #000;
+$lightDark: #1F1F1F;
+
+@mixin flex ($flex, $direction, $justify, $aligin, $gap) {
+    display: $flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $aligin;
+    gap: $gap;
+}

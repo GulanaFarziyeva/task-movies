@@ -1,3 +1,6 @@
+import { FaRegTimesCircle } from "@react-icons/all-files/fa/FaRegTimesCircle";
+import { destroyModal } from "../modals/Modal";
+
 const LoginForm = () => {
   return (
     <div className="login">
@@ -27,15 +30,14 @@ const LoginForm = () => {
         <a href="#1" className="login__footer-text__link">
           Privacy Police
         </a>
-        &nbsp;
-        and
-        &nbsp;
+        &nbsp; and &nbsp;
         <a className="login__footer-text__link" href="#2">
           Terms of service
         </a>
-        &nbsp;
-        apply.
+        &nbsp; apply.
       </span>
+
+      <FaRegTimesCircle className="login__close-btn" onClick={destroyModal} />
     </div>
   );
 };
