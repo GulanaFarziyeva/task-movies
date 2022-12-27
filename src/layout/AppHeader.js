@@ -7,7 +7,7 @@ const AppHeader = () => {
 
   return (
     <div className="header container">
-      <div className={`header__inner ${active ? "dark-background" : ""}`}>
+      <div className={`header__inner ${active ? "dark-background" : "transparent"}`}>
         <h1 className="header__inner__logo">Logo</h1>
 
         <ul className={`header__inner__menu ${!active && "navbar-active"}`}>
@@ -58,7 +58,7 @@ const AppHeader = () => {
           active ? "hamburger-menu-close" : "hamburger-menu-block"
         }`}
         onClick={() => {
-          setActive(!active);
+          setActive(prevState => !prevState);
         }}
       />
       <FaTimes
@@ -66,7 +66,7 @@ const AppHeader = () => {
           active ? "hamburger-menu-block" : "hamburger-menu-close"
         }`}
         onClick={() => {
-          setActive(!active);
+          setActive(prevState => !prevState);
         }}
       />
     </div>

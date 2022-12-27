@@ -13,12 +13,12 @@ const Hero = () => {
            className={`home__hero__inner__volume__btn ${
             volume ? "volume-off" : "volume-open"
           }`} onClick={() => {
-            setvolume(!volume);
+            setvolume(prevState => !prevState);
           }} />
           <FaVolumeMute  className={`home__hero__inner__volume__off-btn ${
             volume ? "volume-open" : "volume-off"
           }`} onClick={() => {
-            setvolume(!volume);
+            setvolume(prevState => !prevState);
           }}/>
         </div>
       </div>

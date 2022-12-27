@@ -29,11 +29,11 @@
                 position: fixed;
                 top: 40%;
                 left: 88%;
-                cursor: pointer;
 
                 &__btn {
                     color: $base-color;
                     font-size: 20px;
+                    cursor: pointer;
                 }
 
                 &__off-btn {
@@ -54,7 +54,7 @@
 
 }
 
-@media(max-width: 1180px) {
+@media(max-width: 1200px) {
     .home {
         &__hero {
             &__inner {
@@ -83,10 +83,10 @@
     }
 }
 
-@media(min-width: 1541px) {
+@media(min-width: 1540px) {
     .home__hero__inner {
-        width: 100vw !important;
-        
+        width: 100vw;
+
         &__volume {
             top: 25%;
             left: 75%;
