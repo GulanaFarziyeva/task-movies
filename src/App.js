@@ -1,4 +1,4 @@
-import AppHeader from "./layout/AppHeader";
+import AppHeader from "./components/layout/AppHeader";
 import Home from "./features/home/Home";
 
 const App = () => {

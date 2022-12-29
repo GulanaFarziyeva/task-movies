@@ -1,5 +1,6 @@
 @import './variable.scss';
-@import '../../layout/layout.scss';
+@import './mixins.scss';
+@import '../../components/layout/layout.scss';
 @import '../../features/home/home.scss';
 @import '../../features/auth/login.scss';
 @import '../../features/watchlist/watchlist.scss';

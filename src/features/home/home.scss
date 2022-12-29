@@ -22,7 +22,6 @@
             &__volume {
                 transform: translate(78%, 250px) !important;
 
-
                 &__btn {
                     color: $base-color;
                     font-size: 20px;
@@ -46,19 +45,25 @@
     }
 
     &__card {
-        padding: 40px 60px 0 60px;
+        padding: 40px 60px;
         background-color: #161616;
         @include flex(flex, row, center, center, 0);
 
         &__item {
-            transition: all 1s ease !important;
-            border-radius: 8px;
-            margin: 20px 20px 0 20px;
+            margin: 20px;
+            margin-bottom: 0;
             cursor: pointer;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            transition: all 1s ease !important;
 
             &:hover {
-                background: $theme-color;
-                transform: scale(1);
+                background: radial-gradient(100% 100% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+                box-shadow: inset -2.24404px -2.24404px 112.202px rgba(255, 255, 255, 0.02);
+                backdrop-filter: blur(7.5px);
+                border-radius: 6.58333px;
+                transform: scale(1.1);
+                transform-origin: bottom;
             }
 
             &:hover &__body__inner__details {
@@ -110,10 +115,10 @@
                     display: none;
 
                     &__heart {
-                        color: $base-color;
                         margin-bottom: 40px;
                         font-size: 24px;
                         margin-right: 10px;
+                        color: $base-color;
                     }
 
                     &__play {
@@ -127,23 +132,21 @@
 
         .slick-arrow {
             &::before {
-                font-size: 38px;
-                color: #ffffff71;
+                font-size: 32px;
+                color: $theme-color;
             }
-
         }
 
         .slick-next {
-            margin-right: 140px !important;
+            right: 45px !important;
             z-index: 999;
         }
 
         .slick-prev {
-            margin-left: 120px !important;
+            margin-left: 55px !important;
             z-index: 999;
         }
     }
-
 }
 
 
@@ -155,27 +158,17 @@
                 background-position: right 80% top 40%;
             }
         }
-
     }
 }
-
-
-
 
 @media(max-width: 768px) {
     .home__card {
         padding: 20px 30px;
 
-        .slick-next {
-            margin-right: 110px !important;
+        .slick-arrow {
+            display: none !important;
         }
-
-        .slick-prev {
-            margin-left: 90px;
-        }
-
     }
-
 }
 
 @media(max-width:650px) {
@@ -187,7 +180,6 @@
     }
 }
 
-
 @media(max-width: 550px) {
     .home__card {
         padding: 10px 20px;
@@ -195,27 +187,7 @@
         &__item {
             margin: 20px 10px !important;
         }
-
-        .slick-next {
-            margin-right: 90px !important;
-
-            &::before {
-                font-size: 25px;
-                margin-bottom: 20px;
-            }
-        }
-
-        .slick-prev {
-            margin-left: 70px;
-
-            &::before {
-                font-size: 25px;
-            }
-        }
-
-
     }
-
 }
 
 @media(max-width:450px) {

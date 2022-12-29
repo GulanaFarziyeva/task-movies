@@ -7,7 +7,7 @@
     transition: all .5s ease;
 }
 
-.transparent{
+.transparent {
     transition: all .5s ease;
     background: none;
 }
@@ -24,7 +24,7 @@
     left: 0;
     right: 0;
     z-index: 90;
-    
+
     &__inner {
         width: 100%;
         @include flex(flex, row, flex-start, center, 50px);
@@ -57,12 +57,14 @@
 
             &__select {
                 &__inner {
-                    background: none;
-                    border-radius: 7px;
                     color: $base-color;
                     border: none;
                     outline: none;
-                    cursor: pointer;
+                    background: none;
+
+                    &__options {
+                        background-color: rgba(128, 128, 128, 0.63);
+                    }
                 }
             }
         }

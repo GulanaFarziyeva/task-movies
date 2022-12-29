@@ -1,14 +1,14 @@
 import Hero from "./hero/Hero";
-import SliderComponent from "./carusel/SliderComponent";
+import Carousel from "./carusel/Carusel";
 
-const Home = () =>{
-    return(
-        <div className="home">
-            <Hero />
-            <SliderComponent />
-            <SliderComponent />
-        </div>
-    )
-}
+const Home = () => {
+  return (
+    <div className="home">
+      <Hero />
+      <Carousel />
+      <Carousel />
+    </div>
+  );
+};
 
 export default Home;

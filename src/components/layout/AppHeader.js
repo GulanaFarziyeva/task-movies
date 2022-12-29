@@ -1,10 +1,10 @@
 import { FaBars } from "@react-icons/all-files/fa/FaBars";
 import { FaTimes } from "@react-icons/all-files/fa/FaTimes";
 import { useState } from "react";
-import LoginForm from "../features/auth/LoginForm";
+import LoginForm from "../../features/auth/LoginForm";
 
-import { createModal, useModals } from "../features/modals/Modal";
-import Watchlist from "../features/watchlist/WatchList";
+import { createModal, useModals } from "../../features/modals/Modal";
+import Watchlist from "../../features/watchlist/WatchList";
 
 const AppHeader = () => {
   const [active, setActive] = useState(false);

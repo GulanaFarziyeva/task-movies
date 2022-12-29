@@ -6,7 +6,10 @@
     max-width: 450px;
     margin: 0 auto;
     color: $base-color;
-    background-color: $theme-color;
+    background: radial-gradient(100% 100% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: inset -2.41843px -2.41843px 120.921px rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(7.5px);
+    border-radius: 30px;
     @include flex(flex, column, flex-start, center, 20px);
 
     &__title {
@@ -37,11 +40,12 @@
             font-size: 14px;
             width: 100%;
             padding: 14px 38px;
+            border: none;
             border-radius: 8px;
             outline: none;
             border: none;
             color: $base-color;
-            background-color: $dark !important;
+            background: #0D0D0D;
         }
 
         &__password-link {
@@ -66,36 +70,36 @@
             }
 
             &__login-inner {
-                box-sizing: border-box;
-                padding: 2px 40px;
-                background: linear-gradient(#222, #222),
-                    linear-gradient(#0FF7F0, #D686FF);
-                border: 1px solid transparent;
-                background-repeat: no-repeat;
-                background-origin: padding-box, border-box;
-                border-radius: 1.5rem;
-                border-width: 9px;
                 position: relative;
-                cursor: pointer;
+                border: none;
+                border-width: 1px;
 
                 &::before {
                     content: "";
                     position: absolute;
-                    top: -8px;
-                    bottom: -8px;
-                    left: -8px;
-                    right: -8px;
-                    border: 9px solid #222;
-                    border-radius: 1.5rem;
+                    inset: 0;
+                    border-radius: 55px;
+                    padding: 1px;
+                    background: linear-gradient(45deg, #0FF7F0, #D686FF);
+                    -webkit-mask:
+                        linear-gradient(#fff 0 0) content-box,
+                        linear-gradient(#fff 0 0);
+                    -webkit-mask-composite: xor;
+                    mask-composite: exclude;
                 }
 
                 &__btn {
-                    background: none;
-                    border: none;
-                    outline: none;
+                    background: radial-gradient(100% 100% at 0% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+                    box-shadow: inset -3.32534px -3.32534px 166.267px rgba(255, 255, 255, 0.02);
+                    backdrop-filter: blur(6.875px);
+                    border-radius: 55px;
+                    width: 170px;
+                    height: 48px;
+                    left: 728px;
+                    top: 576px;
+                    font-size: 14px;
                     color: $base-color;
-                    font-size: 16px;
-                    line-height: 19px;
+                    border: none;
                 }
             }
         }
@@ -115,12 +119,13 @@
         }
     }
 
-    &__close-btn{
+    &__close-btn {
         font-size: 22px;
+        font-weight: 300;
         position: fixed;
         top: -5px;
         right: -5px;
-        color: rgba(255, 255, 255, 0.76);
+        color: #ffffff46;
         cursor: pointer;
     }
 
